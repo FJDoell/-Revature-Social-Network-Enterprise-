@@ -31,16 +31,6 @@ spring:
       starttls.enable: true
       ssl.trust: smtp.gmail.com
       
-#  datasource:
-#    url: jdbc:postgresql://ramzy1.cyp5athagmcx.us-east-2.rds.amazonaws.com:5432/Project2
-#    username: ramzy1
-#    password: p4ssw0rd
-#    driver-class-name: org.postgresql.Driver
-#  jpa:
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
-#    show-sql: true
-#    hibernate:
-#      ddl-auto: create
 document:
   bucket-name: spring-boot-s3-poc
 cloud:
