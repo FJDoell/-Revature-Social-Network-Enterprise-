@@ -25,13 +25,20 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 	
 	private String homePage = "/html/home.html";
 	
+	/**
+	 * Retrieves the currently authenticated user from the database and stores their account object in the session.
+	 * Redirects the user to the home page once complete.
+	 */
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 		
+		// Storing user object in session
 		String username = authentication.getName();
 		AccountModel user = service.getAccountByUsername(username);
 		request.getSession().setAttribute("currentUser", user);
+		
+		// Redirect user to the home page
 		redirect.sendRedirect(request, response, homePage);
 		clearAuthenticationAttributes(request);
 		

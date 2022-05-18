@@ -3,7 +3,6 @@
 server:
   port: 9099
 spring:
-
   datasource:
     url: jdbc:postgresql://${DATABASE_ENDPOINT}/project2DB
     username: ${DATABASE_USERNAME}
@@ -14,6 +13,11 @@ spring:
     show-sql: false
     hibernate:
       ddl-auto: none
+  autoconfigure:
+    exclude:
+      - org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration 
 
 # Code for setting up email capabilities through spring
 # Currently set for gmail, but we can change that or not, its whatever we wanna do.
@@ -32,7 +36,7 @@ spring:
       ssl.trust: smtp.gmail.com
       
 document:
-  bucket-name: spring-boot-s3-poc
+  bucket-name: avatarimages2005
 cloud:
   aws:
     region:
@@ -41,6 +45,14 @@ cloud:
     credentials:
       access-key: ${AWS_S3_KEY}
       secret-key: ${AWS_S3_SKEY}
+      
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+       
     
 # Code for setting up email capabilities through spring
 # Currently set for gmail, but we can change that or not, its whatever we wanna do.
