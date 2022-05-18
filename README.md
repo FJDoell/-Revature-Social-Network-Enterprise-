@@ -1,5 +1,5 @@
-# Revature Social Network Enterprise
-Themed around Avatar: The Last Airbender.
+# Bender Social
+A social media application themed around Avatar: The Last Airbender.
 
 In this social network, everyone is friends with everyone. As a user, you will be able to register and login to your account. When you successfully login, you are automatically friends with everyone which means you will see a feed of everyone's posts. Users can create a post and like other people's posts. Users may also post comments in response to posts. Users may also choose a bending style.
 
